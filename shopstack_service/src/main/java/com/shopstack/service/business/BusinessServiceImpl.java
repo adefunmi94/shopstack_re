@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.shopstack.dao.business.BusinessDao;
 import com.shopstack.entities.business.Business;
 import com.shopstack.entities.business.BusinessCategory;
+import com.shopstack.entities.business.BusinessOutlet;
 import com.shopstack.entities.business.BusinessServiceType;
 
 @Service
@@ -45,6 +46,18 @@ public class BusinessServiceImpl implements BusinessService{
 	public BusinessCategory findBusinessCategory(String categoryName) {
 		// TODO Auto-generated method stub
 		return businessDaoImpl.findBusinessCategoryByName(categoryName);
+	}
+
+	@Override
+	public void saveBusinessOutlet(BusinessOutlet newBusinessOutlet) {
+		businessDaoImpl.save(newBusinessOutlet);
+		
+	}
+
+	@Override
+	public BusinessOutlet findOutletById(int outletId) {
+		
+		return businessDaoImpl.findOutletById(outletId);
 	}
 	
 	

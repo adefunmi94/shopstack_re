@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.shopstack.dao.business.BusinessDaoImpl;
 import com.shopstack.entities.business.BusinessOutlet;
 import com.shopstack.entities.customer.Customer;
-import com.shopstack.service.businessoutlet.BusinessOutletServiceImpl;
 import com.shopstack.service.customer.CustomerService;
-import com.shopstack.service.customer.CustomerServiceImpl;
-
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
@@ -32,7 +31,7 @@ public class CustomerController {
 	private CustomerService customerService; 
 	
 	@Autowired
-	private BusinessOutletServiceImpl businessOutletService;
+	private BusinessDaoImpl businessServiceImp;
 	
 	@GetMapping("/list")
 	public String listCustomers(Model theModel) {
@@ -70,7 +69,7 @@ public class CustomerController {
 			@Valid @ModelAttribute("customer") Customer theCustomer,
 			BindingResult theBindingResult) { 
 	   
-	   BusinessOutlet existingOutlet = businessOutletService.findOutletById(7);
+	   BusinessOutlet existingOutlet =businessServiceImp.findOutletById(7);
 	   
 	   
 		

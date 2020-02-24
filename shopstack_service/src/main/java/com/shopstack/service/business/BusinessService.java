@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.shopstack.entities.business.Business;
 import com.shopstack.entities.business.BusinessCategory;
+import com.shopstack.entities.business.BusinessOutlet;
 import com.shopstack.entities.business.BusinessServiceType;
 
 public interface BusinessService {
@@ -17,6 +18,10 @@ public interface BusinessService {
 	public BusinessServiceType findBusinessServiceType(String nameString);
 	
 	public BusinessCategory findBusinessCategory(String categoryName);
+
+	public void saveBusinessOutlet(BusinessOutlet newBusinessOutlet);
+	
+	public BusinessOutlet findOutletById(int outletId);
 	
 	
 }

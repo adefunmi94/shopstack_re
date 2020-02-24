@@ -13,7 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.shopstack.entities.business.BusinessOutlet;
-import com.shopstack.service.businessoutlet.BusinessOutletService;
+import com.shopstack.service.business.BusinessService;
 
 @ContextConfiguration("classpath:/service-layer-context.xml")
 @RunWith(SpringRunner.class)
@@ -22,7 +22,7 @@ public class BusinessOutletServiceImplTest {
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Mock
-	private BusinessOutletService businessServiceImp;
+	private BusinessService businessServiceImp;
 	
 //	@Autowired
 //	 private BusinessDao businessService;
@@ -30,7 +30,7 @@ public class BusinessOutletServiceImplTest {
 	@Before
 	public void setUp() throws Exception {
 		
-		businessServiceImp= mock(BusinessOutletService.class);
+		businessServiceImp= mock(BusinessService.class);
 		
 	}
 
