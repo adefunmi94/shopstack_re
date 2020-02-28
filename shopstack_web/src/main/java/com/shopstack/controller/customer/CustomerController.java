@@ -21,6 +21,7 @@ import com.shopstack.dao.business.BusinessDaoImpl;
 import com.shopstack.entities.business.BusinessOutlet;
 import com.shopstack.entities.customer.Customer;
 import com.shopstack.service.customer.CustomerService;
+
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {

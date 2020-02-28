@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
     
@@ -11,9 +10,18 @@
 <body>
 	
 	
-	A confirmation link has been sent to your <h1>${user_email}</h1>
+<h1>You have successfully Register New Business Outlet </h1>
+
+ <h2>${location}</h2>
 	
 	<br>
+	<h2>${displayName}</h2>
+	
+	<br>
+	${phone } 
+	
+	<br>
+	<h1>${email}</h1>
 
 	
 	
