@@ -21,9 +21,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Product> product() {
+	public List<Product> productList() {
 	
-		return productDao.product();
+		return productDao.productList();
 	}
 	
 	@Override
@@ -34,8 +34,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Category> category() {
+	public List<Category> categoryList() {
 		
-		return productDao.category();
+		return productDao.categoryList();
+	}
+
+	@Override
+	public void deleteProduct(int theId) {
+		
+		productDao.deleteProduct(theId);
 	}
 }

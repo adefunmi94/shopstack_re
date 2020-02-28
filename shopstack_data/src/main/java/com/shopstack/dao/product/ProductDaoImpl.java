@@ -39,7 +39,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 	@Transactional
 	@Override
-	public List<Product> product() {
+	public List<Product> productList() {
 		Session session=factory.getCurrentSession();
 		List<Product> resultList;
 		Query<Product> query=session.createQuery("from Product",Product.class);
@@ -60,7 +60,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 	@Transactional
 	@Override
-	public List<Category> category() {
+	public List<Category> categoryList() {
 		Session session =factory.getCurrentSession();
 	 List<Category> resultList;
 	 
@@ -75,5 +75,17 @@ public class ProductDaoImpl implements ProductDao {
 	Session session =factory.getCurrentSession();
 		return session.get(Product.class,productId);
 	}
+	@Transactional
+	@Override
+	public void deleteProduct(int theId) {
+		Session session =factory.getCurrentSession();
+		Query theQuery = session.createQuery("delete from Product where id =: productId");
+		theQuery.setParameter("productId", theId);
+		theQuery.executeUpdate();
+		
+		
+	}
+	
+	}
 
-}
+
